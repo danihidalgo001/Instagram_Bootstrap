@@ -3,144 +3,93 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="styles.css">
-  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <title>Instagram Bootstrap</title>
 
   <style>
-    * {
-      box-sizing: border-box;
+    .post-section {
+      overflow-y: auto;
     }
-
-    body {
-      margin: 0;
-      padding: 0;
-      background-color: #ccc;
+    .is-list {
+      gap: 0.5em;
     }
-
-    div.container {
-      display: grid;
-      grid-template-rows: 70px 1fr;
+    .is-list .div-post {
+      max-width: 500px;
+    }
+    .is-list .div-post {
+      border: 1px solid rgba(83, 83, 83, 0.5);
+    }
+    .col-img {
+      padding: 0 !important;
+    }
+    .img-full {
       width: 100%;
-      height: 100vh;
-      transition-duration: 1s;
+      height: auto;
+      object-fit: cover;
     }
-      .container > div {
-        display: flex;
-      }
-
-    .header {
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      padding: 5px;
-      background-color: #fafafa;
-      transition-duration: 0.6s;
-      z-index: 2;
+    .is-cells .img-full {
+      width: 100% !important;
+      height: 300px !important;
+      object-fit: cover;
     }
-      .header > h1 {
-        font-size: 20px;
-      }
-
-    .section {
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      gap: 20px;
-      padding: 20px;
-      overflow-y: auto; 
+    .is-cells .div-post .col {
+      padding: 10px !important;
     }
-      .item {
-        display: grid;
-        position: relative;
-        grid-template-columns: 1fr;
-        grid-template-areas:
-          "item-header"
-          "item-image"
-          "item-content";
-        gap: 5px;
-        padding: 10px;
-        width: 400px;
-        height: 300px;
-        border-radius: 5px;
-        background-color: rgb(255, 255, 255);
-        transition-duration: 0.3s;
-      }
-        .item:hover {
-          transform: scale(1.1);
-          z-index: 99;
-        }
-        .item-header {
-          grid-area: item-header;
-          display: flex;
-          justify-content: space-between;
-          align-items: flex-start;
-          flex-wrap: nowrap;
-          gap: 5px;
-          width: 100%;
-        }
-          .item-header-title {
-            font-size: 1.2em;
-            font-weight: 700;
-          }
-          .item-header-number {
-            font-size: 14px;
-            color: #666;
-          }
-        .item-image {
-          grid-area: item-image;
-          border-radius: 5px;
-          overflow: hidden;
-        }
-          .item-image > img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-          }
-        .item-content {
-          grid-area: item-content;
-          padding: 5px;
-          text-align: justify;
-        }
-          .item-content-text {
-            font-size: 14px;
-            line-height: 1.5;
-          }
-    
-    .section::-webkit-scrollbar {
-      width: 10px;
-      height: 10px;
-      background-color: #ccc;
-      border-radius: 5px;
+    .is-cells .row-list {
+      display: none;
     }
-    .section::-webkit-scrollbar-thumb {
-      background-color: #fafafa;
-      border-radius: 5px;
-    }
-    .section::-webkit-scrollbar-thumb:hover {
-      background-color: #aaa;
-    }
-    .hidden {
-      transform: translateY(-10em);
-    }
-    .hidden-box {
-      grid-template-rows: 0px 1fr !important;
+    .text-overflow {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
   </style>
+
 </head>
 <body>
   <div class="container" id="container">
-    <div class="header" id="header-container">
-      <h1>Breathe Code Photo Feed</h1>
+    <div class="row justify-content-between align-items-center">
+      <div class="col">
+        <i class="fa-brands fa-instagram"></i>
+        Instagram
+      </div>
+      <div class="col-auto">
+        <button type="button" class="btn bg-success text-light">
+          Create a new post
+        </button>
+        <button type="button" class="btn bg-secondary text-light">
+          <i class="fa-solid fa-gear"></i>
+          <i class="fa-solid fa-caret-down"></i>
+        </button>
+      </div>
+      
     </div>
-    <div class="section" id="section-container">
-    <!-- My project -->
+
+    <!-- Change View -->
+    <div class="row justify-content-center">
+      <div class="col-auto text-secondary" id="change-to-cells">
+        <i class="fa-solid fa-table-cells"></i>
+      </div>
+      <div class="col-auto text-primary" id="change-to-list">
+        <i class="fa-solid fa-square"></i>
+      </div>
+    </div>
+
+
+
+    <!-- Posts Section -->
+    <div class="row row-cols-1 is-list" id="post-section">
     </div>
   </div>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js" integrity="sha512-GWzVrcGlo0TxTRvz9ttioyYJ+Wwk9Ck0G81D+eO63BaqHaJ3YZX9wuqjwgfcV/MrB2PhaVX9DkYVhbFpStnqpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
-    const container = document.querySelector("#container")
-    const header = document.querySelector("#header-container")
-    const section = document.querySelector("#section-container")
+    const postSection = document.querySelector("#post-section")
+    const changeToCells = document.querySelector("#change-to-cells")
+    const changeToList = document.querySelector("#change-to-list")
+    
+    let isList = true
+
     const infiniteScroll = true
     let lastScrollTop = 0
     let data = {}
@@ -157,47 +106,71 @@
       }
     }
 
-    const createItem = (url, title, id, text) => {
+    const createItem = (url, title, id, likes, text) => {
       const img = document.createElement("img")
       let error = false
       img.src = url
-      img.classList.add("item-image-img")
+      img.classList.add("img-full")
 
       img.onload = function() {
-        const container = document.querySelector("#section-container")
-        const item = document.createElement("div")
-        const itemHeader = document.createElement("div")
-        const itemHeaderTitle = document.createElement("div")
-        const itemHeaderNumber = document.createElement("div")
-        const itemImage = document.createElement("div")
-        const itemContent = document.createElement("div")
-        const itemContentText = document.createElement("span")
+        const postSection = document.querySelector("#post-section")
+        const mainCol = document.createElement("div")
+        const containerPost = document.createElement("div")
+        const rowHeader = document.createElement("div")
+        const colTitle = document.createElement("div")
+        const colNumber = document.createElement("div")
+        const rowImg = document.createElement("div")
+        const colImg = document.createElement("div")
+        const rowLikes = document.createElement("div")
+        const colLikes = document.createElement("div")
+        const rowText = document.createElement("div")
+        const colText = document.createElement("div")
 
         // add content
-        itemHeaderTitle.textContent = title
-        itemHeaderNumber.textContent = id
-        itemContentText.textContent = text
+        colTitle.textContent = title
+        colNumber.textContent = `${ postSection.children.length + 1}/${ id }`
+        colLikes.textContent = likes
+        colText.textContent = text
 
         // add classes
-        item.classList.add("item")
-        itemHeader.classList.add("item-header")
-        itemHeaderTitle.classList.add("item-header-title")
-        itemHeaderNumber.classList.add("item-header-number")
-        itemImage.classList.add("item-image")
-        itemContent.classList.add("item-content")
-        itemContentText.classList.add("item-content-text")
+        containerPost.classList.add("container")
+        containerPost.classList.add("div-post")
+
+        rowHeader.classList.add("row")
+        rowHeader.classList.add("row-list")
+        rowHeader.classList.add("justify-content-between")
+        rowImg.classList.add("row")
+        rowLikes.classList.add("row")
+        rowLikes.classList.add("row-list")
+        rowText.classList.add("row")
+        rowText.classList.add("row-list")
+
+        mainCol.classList.add("col")
+        colTitle.classList.add("col-auto")
+        colTitle.classList.add("text-overflow")
+        colNumber.classList.add("col-auto")
+        colImg.classList.add("col")
+        colImg.classList.add("col-img")
+        colLikes.classList.add("col")
+        colText.classList.add("col")
 
         // append content
-        itemHeader.appendChild(itemHeaderTitle)
-        itemHeader.appendChild(itemHeaderNumber)
-        itemImage.appendChild(img)
-        itemContent.appendChild(itemContentText)
+        rowHeader.appendChild(colTitle)
+        rowHeader.appendChild(colNumber)
 
-        item.appendChild(itemHeader)
-        item.appendChild(itemImage)
-        item.appendChild(itemContent)
+        colImg.appendChild(img)
+        rowImg.appendChild(colImg)
 
-        container.appendChild(item)
+        rowLikes.appendChild(colLikes)
+        rowText.appendChild(colText)
+
+        containerPost.appendChild(rowHeader)
+        containerPost.appendChild(rowImg)
+        containerPost.appendChild(rowLikes)
+        containerPost.appendChild(rowText)
+
+        mainCol.appendChild(containerPost)
+        postSection.appendChild(mainCol)
       }
       
     }
@@ -206,13 +179,17 @@
       const titleMax = titles.length
       const textMax = texts.length
       const randomNumber = Math.floor(Math.random() * 3)
+      const likes = `${ Math.floor(Math.random() * 7) + 2 ** Math.floor(Math.random() * 9) } likes`
+
 
       if(titleMax && textMax) {
-        images.forEach((url) => {
+        console.log("hola")
+        images.forEach((url, index) => {
           createItem(
             url = url,
             title = titles[Math.floor(Math.random() * titleMax)],
-            id = "12/14",
+            id = images.length,
+            likes,
             text = texts[Math.floor(Math.random() * textMax)]
           )
         })
@@ -229,26 +206,64 @@
         console.log(error)
       }
     })
-    section.addEventListener("scroll", () => {
-      if (section.scrollTop > lastScrollTop) {
-        header.classList.add("hidden")
-        container.classList.add("hidden-box")
-      } else {
-        header.classList.remove("hidden")
-        container.classList.remove("hidden-box")
-      }
+    changeToCells.addEventListener("click", () => {
+      if (isList) {
+        isList = false
 
-      if (section.scrollTop + section.clientHeight >= section.scrollHeight && infiniteScroll) {
+        console.log("change to cells")
+
+        changeToList.classList.remove("text-primary")
+        changeToList.classList.add("text-secondary")
+        
+        changeToCells.classList.remove("text-secondary")
+        changeToCells.classList.add("text-primary")
+
+        postSection.classList.remove("row-cols-1")
+        postSection.classList.add("row-cols-3")
+        
+        postSection.classList.remove("is-list")
+        postSection.classList.add("is-cells")
+      }
+    })
+    changeToList.addEventListener("click", () => {
+      if (!isList) {
+        isList = true
+
+        console.log("change to list")
+
+        changeToCells.classList.remove("text-primary")
+        changeToCells.classList.add("text-secondary")
+
+        changeToList.classList.remove("text-secondary")
+        changeToList.classList.add("text-primary")
+
+        postSection.classList.remove("row-cols-3")
+        postSection.classList.add("row-cols-1")
+
+        postSection.classList.remove("is-cells")
+        postSection.classList.add("is-list")
+      }
+    })
+    postSection.addEventListener("scroll", () => {
+      // if (postSection.scrollTop > lastScrollTop) {
+      //   header.classList.add("hidden")
+      //   container.classList.add("hidden-box")
+      // } else {
+      //   header.classList.remove("hidden")
+      //   container.classList.remove("hidden-box")
+      // }
+
+      if (postSection.scrollTop + postSection.clientHeight >= postSection.scrollHeight && infiniteScroll) {
         generateHTML(data)
       }
-      lastScrollTop = section.scrollTop
+      lastScrollTop = postSection.scrollTop
     })
-    header.addEventListener("scroll", () => {
-      if (header.scrollTop > 0) {
-        header.classList.remove("hidden")
-        container.classList.remove("hidden-box")
-      }
-    })
+    // header.addEventListener("scroll", () => {
+    //   if (header.scrollTop > 0) {
+    //     header.classList.remove("hidden")
+    //     container.classList.remove("hidden-box")
+    //   }
+    // })
     
   </script>
 </body>

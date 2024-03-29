@@ -2,16 +2,31 @@
   "images": [
     "./imgs/img_1.jpg",
     "./imgs/img_2.jpg",
-    "./imgs/img_3.jpg"
+    "./imgs/img_3.jpg",
+    "./imgs/img_4.jpg",
+    "./imgs/img_5.jpg",
+    "./imgs/img_6.jpg",
+    "./imgs/img_7.png",
+    "./imgs/img_8.jpg",
+    "./imgs/img_9.jpg"
   ],
   "titles": [
-    "Facilisi cras fermentum odio eu feugiat pretium nibh ipsum consequat.",
-    "A cras semper auctor neque vitae tempus quam pellentesque nec.",
-    "Lacinia quis vel eros donec ac."
+    "Facilisi cras fermentum odio .",
+    "A cras semper auctor neque .",
+    "Lacinia quis vel eros donec ac.",
+    "In egestas erat imperdiet.",
+    "Amet consectetur adipiscing.",
+    "Venenatis a condimentum vitae sapien.",
+    "Odio morbi quis commodo odio"
   ],
   "texts": [
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At erat pellentesque adipiscing commodo elit.",
     "Diam maecenas sed enim ut sem viverra aliquet eget sit amet tellus cras adipiscing enim eu turpis egestas pretium aenean pharetra magna ac placerat vestibulum lectus mauris ultrices eros in.",
-    "Neque viverra justo nec ultrices dui sapien eget mi proin sed libero enim sed faucibus turpis in eu mi bibendum neque egestas congue quisque egestas diam in arcu cursus euismod."
+    "Neque viverra justo nec ultrices dui sapien eget mi proin sed libero enim sed faucibus turpis in eu mi bibendum neque egestas congue quisque egestas diam in arcu cursus euismod.",
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "Turpis massa tincidunt dui ut ornare.",
+    "Imperdiet proin fermentum leo vel orci porta non pulvinar neque.",
+    "Sit amet purus gravida quis blandit turpis cursus.",
+    "Adipiscing commodo elit at imperdiet dui."
   ]
 }
