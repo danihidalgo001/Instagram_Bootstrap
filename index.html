@@ -3,74 +3,78 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/solid.min.css" integrity="sha512-pZlKGs7nEqF4zoG0egeK167l6yovsuL8ap30d07kA5AJUq+WysFlQ02DLXAmN3n0+H3JVz5ni8SJZnrOaYXWBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/brands.min.css" integrity="sha512-8RxmFOVaKQe/xtg6lbscU9DU0IRhURWEuiI0tXevv+lXbAHfkpamD4VKFQRto9WgfOJDwOZ74c/s9Yesv3VvIQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css" integrity="sha512-d0olNN35C6VLiulAobxYHZiXJmq+vl+BGIgAxQtD5+kqudro/xNMvv2yIHAciGHpExsIbKX3iLg+0B6d0k4+ZA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <title>Instagram Bootstrap</title>
 
   <style>
-    .post-section {
-      overflow-y: auto;
-    }
-    .is-list {
-      gap: 0.5em;
-    }
-    .is-list .div-post {
-      max-width: 500px;
-    }
-    .is-list .div-post {
-      border: 1px solid rgba(83, 83, 83, 0.5);
-    }
-    .col-img {
-      padding: 0 !important;
-    }
-    .img-full {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-    }
-    .is-cells .img-full {
-      width: 100% !important;
-      height: 300px !important;
-      object-fit: cover;
-    }
-    .is-cells .div-post .col {
-      padding: 10px !important;
-    }
-    .is-cells .row-list {
-      display: none;
-    }
-    .text-overflow {
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
   </style>
 
 </head>
 <body>
-  <div class="container" id="container">
-    <div class="row justify-content-between align-items-center">
-      <div class="col">
+  
+  <div class="container-fluid" id="container">
+
+    <div class="row justify-content-between align-items-center bg-secondary bg-opacity-10 pt-2 pb-2 mb-2">
+      <div class="col-auto">
         <i class="fa-brands fa-instagram"></i>
-        Instagram
+        <span class="fw-semibold">Instagram</span>
       </div>
       <div class="col-auto">
-        <button type="button" class="btn bg-success text-light">
+        <button type="button" class="btn btn-success text-light" data-bs-toggle="modal" data-bs-target="#exampleModal">
           Create a new post
         </button>
-        <button type="button" class="btn bg-secondary text-light">
-          <i class="fa-solid fa-gear"></i>
-          <i class="fa-solid fa-caret-down"></i>
-        </button>
+        
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Create a new post</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <label for="exampleFormControlTextarea1" class="form-label fw-semibold">Caption:</label>
+                <textarea class="form-control mb-3" id="FormControlTextarea1" rows="3" placeholder="Add the caption of your post here"></textarea>
+                <button type="button" class="btn border bg-secondary bg-opacity-10">
+                  <i class="fa-solid fa-camera"></i>
+                </button>
+                <button type="button" class="btn border bg-secondary bg-opacity-10">
+                  <i class="fa-solid fa-location-dot"></i>
+                </button>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-success">Publish</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="btn-group">
+          <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-gear"></i>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Profile</a></li>
+            <li><a class="dropdown-item" href="#">Accesibility</a></li>
+            <li><a class="dropdown-item" href="#">Privacy and Data</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item text-danger" href="#">Log out</a></li>
+          </ul>
+        </div>
       </div>
       
     </div>
 
     <!-- Change View -->
-    <div class="row justify-content-center">
-      <div class="col-auto text-secondary" id="change-to-cells">
+    <div class="row justify-content-center mb-4">
+      <div class="col-auto text-secondary" id="buttonCells">
         <i class="fa-solid fa-table-cells"></i>
       </div>
-      <div class="col-auto text-primary" id="change-to-list">
+      <div class="col-auto text-primary" id="buttonList">
         <i class="fa-solid fa-square"></i>
       </div>
     </div>
@@ -78,15 +82,60 @@
 
 
     <!-- Posts Section -->
-    <div class="row row-cols-1 is-list" id="post-section">
+    <div class="grid pb-3" id="postSectionCells">
+
+      <div class="card g-col-4 card-list">
+        <div class="card-header">
+          <div class="row justify-content-between">
+            <div class="col-auto">
+              <span class="fs-5 text fw-semibold mb-0">Card title</span>
+            </div>
+            <div class="col-auto">
+              <span class="mb-0 d-none d-md-block">08/20</span>
+            </div>
+          </div>
+        </div>
+        <img src="./imgs/img_1.jpg" class="" alt="...">
+        <div class="card-body mb-0">
+          <p class="card-text mb-1 fw-semibold">204 Likes</p>
+          <p class="card-text mb-0">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+
     </div>
+
+    <!-- Posts Section -->
+    <!-- <div class="row row-cols-1 justify-content-center pb-3 rowContainer" id="postSectionList">
+
+      <div class="col-sm-12 col-md-6 col-lg-5 col-xl-4 colCardContainer">
+        <div class="card g-col-4 card-list">
+          <div class="card-header">
+            <div class="row justify-content-between">
+              <div class="col-auto">
+                <span class="fs-5 text fw-semibold mb-0">Card title</span>
+              </div>
+              <div class="col-auto">
+                <span class="mb-0 d-none d-md-block">08/20</span>
+              </div>
+            </div>
+          </div>
+          <img src="./imgs/img_1.jpg" class="" alt="...">
+          <div class="card-body mb-0">
+            <p class="card-text mb-1 fw-semibold">204 Likes</p>
+            <p class="card-text mb-0">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          </div>
+        </div>
+      </div>
+
+    </div> -->
+
   </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js" integrity="sha512-GWzVrcGlo0TxTRvz9ttioyYJ+Wwk9Ck0G81D+eO63BaqHaJ3YZX9wuqjwgfcV/MrB2PhaVX9DkYVhbFpStnqpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-    const postSection = document.querySelector("#post-section")
-    const changeToCells = document.querySelector("#change-to-cells")
-    const changeToList = document.querySelector("#change-to-list")
+    const postSectionCells = document.querySelector("#post-section")
+    const buttonCells = document.querySelector("#buttonCells")
+    const buttonList = document.querySelector("#buttonList")
     
     let isList = true
 
@@ -113,7 +162,7 @@
       img.classList.add("img-full")
 
       img.onload = function() {
-        const postSection = document.querySelector("#post-section")
+        const postSectionCells = document.querySelector("#post-section")
         const mainCol = document.createElement("div")
         const containerPost = document.createElement("div")
         const rowHeader = document.createElement("div")
@@ -128,7 +177,7 @@
 
         // add content
         colTitle.textContent = title
-        colNumber.textContent = `${ postSection.children.length + 1}/${ id }`
+        colNumber.textContent = `${ postSectionCells.children.length + 1}/${ id }`
         colLikes.textContent = likes
         colText.textContent = text
 
@@ -170,7 +219,7 @@
         containerPost.appendChild(rowText)
 
         mainCol.appendChild(containerPost)
-        postSection.appendChild(mainCol)
+        postSectionCells.appendChild(mainCol)
       }
       
     }
@@ -200,52 +249,52 @@
     document.addEventListener("DOMContentLoaded", async function() {
       try {
         // generateHTML((await getData()))
-        data = await getData()
-        generateHTML(data)
+        // data = await getData()
+        // generateHTML(data)
       } catch (error) {
         console.log(error)
       }
     })
-    changeToCells.addEventListener("click", () => {
+    buttonCells.addEventListener("click", () => {
       if (isList) {
         isList = false
 
         console.log("change to cells")
 
-        changeToList.classList.remove("text-primary")
-        changeToList.classList.add("text-secondary")
+        buttonList.classList.remove("text-primary")
+        buttonList.classList.add("text-secondary")
         
-        changeToCells.classList.remove("text-secondary")
-        changeToCells.classList.add("text-primary")
+        buttonCells.classList.remove("text-secondary")
+        buttonCells.classList.add("text-primary")
 
-        postSection.classList.remove("row-cols-1")
-        postSection.classList.add("row-cols-3")
+        postSectionCells.classList.remove("row-cols-1")
+        postSectionCells.classList.add("row-cols-3")
         
-        postSection.classList.remove("is-list")
-        postSection.classList.add("is-cells")
+        postSectionCells.classList.remove("is-list")
+        postSectionCells.classList.add("is-cells")
       }
     })
-    changeToList.addEventListener("click", () => {
+    buttonList.addEventListener("click", () => {
       if (!isList) {
         isList = true
 
         console.log("change to list")
 
-        changeToCells.classList.remove("text-primary")
-        changeToCells.classList.add("text-secondary")
+        buttonCells.classList.remove("text-primary")
+        buttonCells.classList.add("text-secondary")
 
-        changeToList.classList.remove("text-secondary")
-        changeToList.classList.add("text-primary")
+        buttonList.classList.remove("text-secondary")
+        buttonList.classList.add("text-primary")
 
-        postSection.classList.remove("row-cols-3")
-        postSection.classList.add("row-cols-1")
+        postSectionCells.classList.remove("row-cols-3")
+        postSectionCells.classList.add("row-cols-1")
 
-        postSection.classList.remove("is-cells")
-        postSection.classList.add("is-list")
+        postSectionCells.classList.remove("is-cells")
+        postSectionCells.classList.add("is-list")
       }
     })
-    postSection.addEventListener("scroll", () => {
-      // if (postSection.scrollTop > lastScrollTop) {
+    postSectionCells.addEventListener("scroll", () => {
+      // if (postSectionCells.scrollTop > lastScrollTop) {
       //   header.classList.add("hidden")
       //   container.classList.add("hidden-box")
       // } else {
@@ -253,10 +302,10 @@
       //   container.classList.remove("hidden-box")
       // }
 
-      if (postSection.scrollTop + postSection.clientHeight >= postSection.scrollHeight && infiniteScroll) {
+      if (postSectionCells.scrollTop + postSectionCells.clientHeight >= postSectionCells.scrollHeight && infiniteScroll) {
         generateHTML(data)
       }
-      lastScrollTop = postSection.scrollTop
+      lastScrollTop = postSectionCells.scrollTop
     })
     // header.addEventListener("scroll", () => {
     //   if (header.scrollTop > 0) {

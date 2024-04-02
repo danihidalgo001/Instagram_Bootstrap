@@ -1,32 +1,58 @@
 {
-  "images": [
-    "./imgs/img_1.jpg",
-    "./imgs/img_2.jpg",
-    "./imgs/img_3.jpg",
-    "./imgs/img_4.jpg",
-    "./imgs/img_5.jpg",
-    "./imgs/img_6.jpg",
-    "./imgs/img_7.png",
-    "./imgs/img_8.jpg",
-    "./imgs/img_9.jpg"
-  ],
-  "titles": [
-    "Facilisi cras fermentum odio .",
-    "A cras semper auctor neque .",
-    "Lacinia quis vel eros donec ac.",
-    "In egestas erat imperdiet.",
-    "Amet consectetur adipiscing.",
-    "Venenatis a condimentum vitae sapien.",
-    "Odio morbi quis commodo odio"
-  ],
-  "texts": [
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At erat pellentesque adipiscing commodo elit.",
-    "Diam maecenas sed enim ut sem viverra aliquet eget sit amet tellus cras adipiscing enim eu turpis egestas pretium aenean pharetra magna ac placerat vestibulum lectus mauris ultrices eros in.",
-    "Neque viverra justo nec ultrices dui sapien eget mi proin sed libero enim sed faucibus turpis in eu mi bibendum neque egestas congue quisque egestas diam in arcu cursus euismod.",
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    "Turpis massa tincidunt dui ut ornare.",
-    "Imperdiet proin fermentum leo vel orci porta non pulvinar neque.",
-    "Sit amet purus gravida quis blandit turpis cursus.",
-    "Adipiscing commodo elit at imperdiet dui."
+  "data": [
+    {
+      "title": "A cras semper auctor neque.",
+      "img": "./imgs/img_1.jpg",
+      "likes": 200,
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At erat pellentesque adipiscing commodo elit."
+    },
+    {
+      "title": "Amet consectetur adipiscing.",
+      "img": "./imgs/img_2.jpg",
+      "likes": 200,
+      "text": "Imperdiet proin fermentum leo vel orci porta non pulvinar neque."
+    },
+    {
+      "title": "Odio morbi quis commodo odio",
+      "img": "./imgs/img_3jpg",
+      "likes": 200,
+      "text": "Adipiscing commodo elit at imperdiet dui."
+    },
+    {
+      "title": "Venenatis a condimentum vitae sapien.",
+      "img": "./imgs/img_4.jpg",
+      "likes": 200,
+      "text": "Sit amet purus gravida quis blandit turpis cursus."
+    },
+    {
+      "title": "Amet consectetur adipiscing.",
+      "img": "./imgs/img_5.jpg",
+      "likes": 200,
+      "text": "Imperdiet proin fermentum leo vel orci porta non pulvinar neque."
+    },
+    {
+      "title": "In egestas erat imperdiet.",
+      "img": "./imgs/img_6.jpg",
+      "likes": 200,
+      "text": "Turpis massa tincidunt dui ut ornare."
+    },
+    {
+      "title": "Lacinia quis vel eros donec ac.",
+      "img": "./imgs/img_7.png",
+      "likes": 200,
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    },
+    {
+      "title": "A cras semper auctor neque.",
+      "img": "./imgs/img_8.jpg",
+      "likes": 200,
+      "text": "Neque viverra justo nec ultrices dui sapien eget mi proin sed libero enim sed faucibus turpis in eu mi bibendum neque egestas congue quisque egestas diam in arcu cursus euismod."
+    },
+    {
+      "title": "Facilisi cras fermentum odio.",
+      "img": "./imgs/img_9.jpg",
+      "likes": 200,
+      "text": "Diam maecenas sed enim ut sem viverra aliquet eget sit amet tellus cras adipiscing enim eu turpis egestas pretium aenean pharetra magna ac placerat vestibulum lectus mauris ultrices eros in."
+    }
   ]
 }
